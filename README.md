@@ -26,8 +26,8 @@ Portfolio profesional desarrollado con **Next.js 14**, **TypeScript**, **Tailwin
 
 - **Nombre:** Santiago Cabrera
 - **Email:** santycabrera150@gmail.com
-- **GitHub:** [github.com/santycabrera150](https://github.com/santycabrera150)
-- **LinkedIn:** [linkedin.com/in/santycabrera150](https://linkedin.com/in/santycabrera150)
+- **GitHub:** [github.com/SantiCabrera19](https://github.com/SantiCabrera19)
+- **LinkedIn:** [linkedin.com/in/santiago-emanuel-cabrera-0a1120238](https://www.linkedin.com/in/santiago-emanuel-cabrera-0a1120238/)
 - **Ubicación:** Resistencia, Chaco, Argentina
 
 ## 📦 Instalación
@@ -101,7 +101,7 @@ El formulario de contacto envía los mensajes directamente a mi correo (**santyc
 
 ## 📧 Contacto
 
-¿Querés contactarme? Usá el formulario del sitio o escribime a [santycabrera150@gmail.com](mailto:santycabrera150@gmail.com).
+¿Querés contactarme? Usá el formulario del sitio, escribime a [santycabrera150@gmail.com](mailto:santycabrera150@gmail.com), o conectá por [GitHub](https://github.com/SantiCabrera19) y [LinkedIn](https://www.linkedin.com/in/santiago-emanuel-cabrera-0a1120238/).
 
 ---
 
