@@ -22,8 +22,9 @@ const Header = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-xl font-bold text-primary-600"
+            className="text-xl font-bold text-primary-600 flex items-center gap-2"
           >
+            <span style={{fontSize: '1.5rem', lineHeight: 1}}>🧉</span>
             <a href="#home">Santiago</a>
           </motion.div>
 
