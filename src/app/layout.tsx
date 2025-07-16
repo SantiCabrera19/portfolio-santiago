@@ -16,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="dark">
+      <head>
+        <link rel="icon" href="/images/pngwing.com.png" sizes="any" type="image/png" />
+      </head>
       <body className={`${inter.className} bg-gray-900 text-white`}>
         {children}
       </body>
