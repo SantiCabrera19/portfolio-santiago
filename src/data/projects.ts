@@ -35,5 +35,25 @@ export const projects = [
       "Responsive",
     ],
     category: "Full Stack"
+  },
+  {
+    id: 3,
+    title: "Notes App",
+    description: "Aplicación moderna de notas con sistema de etiquetas, filtros y búsqueda en tiempo real.",
+    longDescription: "Aplicación full-stack completa para tomar notas con funcionalidades avanzadas como etiquetado, filtrado por etiquetas, búsqueda en tiempo real, archivo de notas y gestión completa de etiquetas. Desarrollada con React, Node.js, TypeScript y PostgreSQL.",
+    image: "/images/notes-app.svg",
+    demo: "https://notes-app-flax-eight.vercel.app/",
+    github: "https://github.com/SantiCabrera19/notes-app",
+    live: "https://notes-app-flax-eight.vercel.app/",
+    tech: ["React", "Node.js", "TypeScript", "PostgreSQL", "Prisma"],
+    features: [
+      "CRUD de notas",
+      "Sistema de etiquetas",
+      "Búsqueda en tiempo real",
+      "Filtros avanzados",
+      "Archivo de notas",
+      "Responsive",
+    ],
+    category: "Full Stack"
   }
 ] 
