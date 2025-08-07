@@ -96,21 +96,7 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Video embed */}
-                {getYouTubeEmbedUrl(project.demo) && (
-                  <div className="w-full flex justify-center mb-4">
-                    <div className="w-full" style={{ aspectRatio: '16/9' }}>
-                      <iframe
-                        src={getYouTubeEmbedUrl(project.demo) || undefined}
-                        title={project.title + ' Demo'}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full rounded-xl border border-gray-200 shadow-lg"
-                      ></iframe>
-                    </div>
-                  </div>
-                )}
+                {/* Video embed removido (ya está arriba) */}
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
