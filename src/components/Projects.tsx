@@ -3,10 +3,27 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { projects } from '@/data/projects'
-import { ExternalLink, Github, Play, Eye } from 'lucide-react'
+import { ExternalLink, Github, Eye } from 'lucide-react'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null)
+
+  const getYouTubeEmbedUrl = (url?: string): string | null => {
+    if (!url) return null
+    try {
+      // youtu.be/<id>
+      const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/)
+      if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
+
+      // youtube.com/watch?v=<id>
+      const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/)
+      if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
+
+      // already an embed
+      if (url.includes('/embed/')) return url
+    } catch {}
+    return null
+  }
 
   return (
     <section id="projects" className="section-padding bg-white">
@@ -34,22 +51,24 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-primary-500"
+            className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-primary-500"
             >
-              <div className="relative h-52 bg-gray-200 rounded-t-xl overflow-hidden">
-                <img
-                  src={project.title === 'CineForo' ? '/images/CineForos.png' : project.title === 'Sistema de Gestión de Convenios' ? '/images/Convenios-utn.png' : ''}
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover rounded-t-xl"
-                  style={{ background: '#222' }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center opacity-100 transition-opacity duration-300 p-4">
-                  <div className="flex space-x-4">
+              {getYouTubeEmbedUrl(project.demo) && (
+                <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+                  <iframe
+                    src={getYouTubeEmbedUrl(project.demo) || undefined}
+                    title={project.title + ' Demo'}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  ></iframe>
+                  <div className="absolute top-3 right-3 flex space-x-2">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white/90 p-3 rounded-full hover:bg-gray-200 transition-all duration-200 transform hover:scale-110"
+                      className="bg-white/90 p-3 rounded-full shadow hover:bg-gray-200 transition-all duration-200 transform hover:scale-110"
                     >
                       <Github size={20} className="text-gray-900" />
                     </a>
@@ -58,14 +77,14 @@ const Projects = () => {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-white/90 p-3 rounded-full hover:bg-gray-200 transition-all duration-200 transform hover:scale-110"
+                        className="bg-white/90 p-3 rounded-full shadow hover:bg-gray-200 transition-all duration-200 transform hover:scale-110"
                       >
                         <ExternalLink size={20} className="text-gray-900" />
                       </a>
                     )}
                   </div>
                 </div>
-              </div>
+              )}
 
               <div className="p-6 flex flex-col items-center">
                 {/* Thumbnail arriba */}
@@ -78,13 +97,11 @@ const Projects = () => {
                 </p>
 
                 {/* Video embed */}
-                {(project.title === 'CineForo' || project.title === 'Sistema de Gestión de Convenios') && (
+                {getYouTubeEmbedUrl(project.demo) && (
                   <div className="w-full flex justify-center mb-4">
                     <div className="w-full" style={{ aspectRatio: '16/9' }}>
                       <iframe
-                        src={project.title === 'CineForo'
-                          ? 'https://www.youtube.com/embed/ckkhcqXZt2w'
-                          : 'https://www.youtube.com/embed/ul0mDuwQc-w'}
+                        src={getYouTubeEmbedUrl(project.demo) || undefined}
                         title={project.title + ' Demo'}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
