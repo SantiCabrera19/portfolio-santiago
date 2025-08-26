@@ -24,17 +24,49 @@ html {
   }
   
   .section-padding {
-    @apply py-20 lg:py-32;
+    @apply py-12 sm:py-16 lg:py-32;
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* MOBILE OPTIMIZATIONS */
+  .mobile-hero-spacing {
+    @apply py-8 sm:py-12 lg:py-20;
+  }
+  
+  .mobile-text-lg {
+    @apply text-base sm:text-lg;
+  }
+  
+  .mobile-text-xl {
+    @apply text-lg sm:text-xl;
+  }
+  
+  .mobile-gap {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+  
+  .mobile-padding {
+    @apply p-4 sm:p-6 lg:p-8;
   }
 
   /* INPUTS CONTACTO */
   .input-custom {
     @apply w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200;
   }
+  
+  /* MOBILE NAVIGATION */
+  .mobile-nav-overlay {
+    @apply fixed inset-0 bg-gray-900/95 backdrop-blur-md z-50 md:hidden;
+  }
+  
+  .mobile-nav-content {
+    @apply flex flex-col items-center justify-center h-full space-y-8;
+  }
+  
+  .mobile-nav-item {
+    @apply text-2xl font-medium text-white hover:text-primary-500 transition-colors duration-200;
+  }
 }
-
- 
