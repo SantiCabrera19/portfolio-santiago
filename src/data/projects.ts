@@ -1,6 +1,27 @@
 export const projects = [
   {
     id: 1,
+    title: "ElectroStore E-commerce",
+    description: "E-commerce moderno de electrodomésticos con catálogo, filtros avanzados, carrito de compras y sistema de autenticación.",
+    longDescription: "Plataforma e-commerce full-stack construida con Next.js 15 y Supabase. Incluye catálogo de productos con filtros avanzados, búsqueda en tiempo real, carrito de compras, sistema de ofertas, checkout simulado y diseño responsive mobile-first inspirado en Mercado Libre.",
+    image: "/images/ElectroStore.png",
+    demo: "https://youtu.be/ER05ys3znIk",
+    github: "https://github.com/SantiCabrera19/electrostore-ecommerce",
+    live: "https://electrostore-ecommerce.vercel.app",
+    tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    features: [
+      "Catálogo con filtros avanzados",
+      "Búsqueda en tiempo real",
+      "Carrito de compras",
+      "Sistema de ofertas",
+      "Checkout simulado",
+      "Autenticación",
+      "Mobile-first responsive",
+    ],
+    category: "Full Stack"
+  },
+  {
+    id: 2,
     title: "CineForo",
     description: "Plataforma de foros y reseñas de películas, con sistema de usuarios, comentarios y panel de administración.",
     longDescription: "Aplicación web full-stack desarrollada con Django y SQLite. Incluye sistema completo de CRUD para películas, reseñas con likes AJAX, autenticación de usuarios, panel de administración y diseño responsive.",
@@ -18,7 +39,7 @@ export const projects = [
     category: "Full Stack"
   },
   {
-    id: 2,
+    id: 3,
     title: "Sistema de Gestión de Convenios",
     description: "Sistema web para gestión de convenios institucionales, CRUD, autenticación y panel de administración.",
     longDescription: "Aplicación web empresarial con sistema de roles (admin/user), gestión completa de convenios, flujo de aprobaciones, notificaciones por email con Resend, validaciones con Zod y dashboard administrativo.",
@@ -37,7 +58,7 @@ export const projects = [
     category: "Full Stack"
   },
   {
-    id: 3,
+    id: 4,
     title: "Notes App",
     description: "Aplicación moderna de notas con sistema de etiquetas, filtros y búsqueda en tiempo real.",
     longDescription: "Aplicación full-stack completa para tomar notas con funcionalidades avanzadas como etiquetado, filtrado por etiquetas, búsqueda en tiempo real, archivo de notas y gestión completa de etiquetas. Desarrollada con React, Node.js, TypeScript y PostgreSQL.",
