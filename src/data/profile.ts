@@ -1,7 +1,7 @@
 export const profile = {
   name: "Santiago",
   title: "Full Stack Developer",
-  description: "Desarrollador web apasionado por crear aplicaciones completas y funcionales. Especializado en Django, React y Next.js.",
+  description: "Desarrollador web apasionado por crear aplicaciones completas y funcionales. Especializado en Next.js, TypeScript y Supabase. Trabajo con IA como herramienta activa de desarrollo — Antigravity, Claude y flujos de vibecoding.",
   email: "santycabrera150@gmail.com",
   whatsapp: "+543624280817",
   github: "https://github.com/SantiCabrera19",
@@ -13,7 +13,7 @@ export const profile = {
 export const skills = [
   {
     category: "Frontend",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS"]
+    technologies: ["React", "Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML/CSS"]
   },
   {
     category: "Backend", 
@@ -25,14 +25,7 @@ export const skills = [
   },
   {
     category: "Tools & Cloud",
-    technologies: ["Git", "Vercel", "PythonAnywhere", "Google Cloud", "Resend API"]
-  }
-]
-
-export const learning = [
-  {
-    category: "Actualmente Aprendiendo",
-    technologies: ["Docker", "MongoDB", "Express.js", "Nest.js", "GraphQL"]
+    technologies: ["Git", "Vercel", "Supabase", "Google Cloud", "Resend API", "Claude AI", "Antigravity"]
   }
 ]
 

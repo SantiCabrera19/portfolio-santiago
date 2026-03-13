@@ -17,6 +17,7 @@ type FormData = {
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const [copiedField, setCopiedField] = useState<string | null>(null)
   
   const {
@@ -28,11 +29,12 @@ const Contact = () => {
 
   const onSubmit = (data: FormData) => {
     setIsSubmitting(true)
+    setSubmitError(null)
 
-    // --- EmailJS directo con los datos del usuario ---
-    const serviceId = 'service_br1315f'
-    const templateId = 'template_ka27gbj'
-    const publicKey = 't7evccPbM53Xnoiiu'
+    // ─── EmailJS config from environment variables ─────────────────────
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ''
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? ''
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ''
 
     const templateParams = {
       name: data.name,
@@ -41,25 +43,28 @@ const Contact = () => {
     }
 
     emailjs.send(serviceId, templateId, templateParams, publicKey)
-      .then((response) => {
+      .then(() => {
         setIsSubmitted(true)
         reset()
       })
-      .catch((err) => {
-        alert('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.')
+      .catch(() => {
+        setSubmitError('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.')
       })
       .finally(() => {
         setIsSubmitting(false)
-        setTimeout(() => setIsSubmitted(false), 4000)
+        setTimeout(() => {
+          setIsSubmitted(false)
+          setSubmitError(null)
+        }, 4000)
       });
   }
 
   const handleCopy = (text: string, field: string) => {
     navigator.clipboard.writeText(text).then(() => {
       setCopiedField(field)
-      setTimeout(() => setCopiedField(null), 2000) // Reset after 2 seconds
-    }).catch(err => {
-      console.error('Error al copiar texto:', err)
+      setTimeout(() => setCopiedField(null), 2000)
+    }).catch(() => {
+      // Silently fail — clipboard API may not be available in all contexts
     })
   }
 
@@ -232,6 +237,11 @@ const Contact = () => {
                   <span className="text-red-500 text-xs mt-1 block">{errors.message.message}</span>
                 )}
               </div>
+              {submitError && (
+                <p className="text-red-500 text-sm text-center font-medium">
+                  {submitError}
+                </p>
+              )}
               <button
                 type="submit"
                 className={`w-full flex items-center justify-center gap-2 py-3 rounded-lg text-lg font-semibold transition-colors duration-200

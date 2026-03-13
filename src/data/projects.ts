@@ -76,5 +76,26 @@ export const projects = [
       "Responsive",
     ],
     category: "Full Stack"
+  },
+  {
+    id: 5,
+    title: "MiDashboard",
+    description: "Dashboard personal con módulos de notas, finanzas, calendario y videos. Construido con buenas prácticas de Next.js 16 y Supabase.",
+    longDescription: "Aplicación web personal full-stack construida con Next.js 16 App Router, Supabase SSR, TypeScript y Tailwind CSS v4. Incluye módulos de notas con editor TipTap, seguimiento de finanzas, calendario de eventos, tracker de videos de YouTube y sistema de settings con preferencias por usuario. Implementa Server Components, Server Actions, Row Level Security y middleware de autenticación.",
+    image: "/images/MiDashboard.png",
+    demo: "",
+    github: "https://github.com/SantiCabrera19/MiDashboard",
+    live: "",
+    tech: ["Next.js 16", "TypeScript", "Supabase", "Tailwind CSS v4", "TipTap"],
+    features: [
+      "App Router + Server Components",
+      "Autenticación con Supabase SSR",
+      "Módulo de notas con editor rich text",
+      "Tracker de finanzas",
+      "Calendario de eventos",
+      "Tracker de videos YouTube",
+      "Settings con preferencias por usuario",
+    ],
+    category: "Full Stack"
   }
 ] 
