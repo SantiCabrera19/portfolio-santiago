@@ -26,7 +26,7 @@ const About = () => {
   const apexExp = experience[0]
 
   return (
-    <section id="about" className="section-padding bg-gray-900">
+    <section id="about" className="section-padding bg-gray-50 border-t border-gray-200">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,10 +35,10 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Sobre Mí
           </h2>
-          <p className="mobile-text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="mobile-text-lg text-gray-600 max-w-2xl mx-auto">
             Pilares sobre los que construyo mis soluciones comerciales
           </p>
         </motion.div>
@@ -52,15 +52,15 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="p-8 bg-dark-800 border border-gray-700/50 rounded-2xl shadow-lg hover:border-primary-500/50 transition-all duration-300"
+              className="p-8 bg-white border border-gray-200 rounded-2xl shadow hover:shadow-md hover:border-primary-500/50 transition-all duration-300"
             >
               <div className="mb-4 flex items-center gap-3">
                 {pillar.icon}
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-bold text-gray-900">
                   {pillar.title}
                 </h3>
               </div>
-              <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 {pillar.description}
               </p>
             </motion.div>
@@ -74,25 +74,25 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="p-8 bg-dark-800 border border-gray-700/50 rounded-2xl shadow-lg hover:border-primary-500/50 transition-all duration-300 max-w-4xl mx-auto"
+            className="p-8 bg-white border border-gray-200 rounded-2xl shadow hover:shadow-md hover:border-primary-500/50 transition-all duration-300 max-w-4xl mx-auto"
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div className="flex items-center gap-3">
                 <Headphones size={28} className="text-primary-500 flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {apexExp.title}
                   </h3>
-                  <p className="text-gray-400 font-medium text-sm sm:text-base">
+                  <p className="text-gray-600 font-medium text-sm sm:text-base">
                     {apexExp.company}
                   </p>
                 </div>
               </div>
-              <span className="px-3 py-1 bg-primary-600/20 text-primary-400 text-xs sm:text-sm rounded-full font-semibold self-start sm:self-center">
+              <span className="px-3 py-1 bg-primary-50 text-primary-600 text-xs sm:text-sm rounded-full font-semibold self-start sm:self-center">
                 {apexExp.period}
               </span>
             </div>
-            <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
               {apexExp.description}
             </p>
           </motion.div>

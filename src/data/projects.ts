@@ -65,13 +65,29 @@ export const projects = [
   },
   {
     id: 5,
+    title: "Resistencia PWAs",
+    description: "Catálogo central de soluciones progresivas.",
+    longDescription: "Plataforma centralizadora desarrollada para alojar soluciones de software instalables (PWAs). Permite a los comerciantes y profesionales de la región experimentar en tiempo real con cartas digitales offline, turneros automáticos y sistemas de inventario diseñados para el mercado local.",
+    image: "/images/resistencia_pwas.png",
+    live: "https://resistencia-pwas.vercel.app/",
+    features: [
+      "Centraliza todas las demos activas",
+      "Instalable directamente en el celular (PWA)",
+      "Acceso rápido mediante códigos QR únicos",
+      "Optimizado para conexiones móviles locales"
+    ],
+    rubro: "otros",
+    rubroLabel: "Plataforma Principal / Catálogo"
+  },
+  {
+    id: 6,
     title: "ElectroStore E-commerce",
     description: "E-commerce moderno de electrodomésticos con catálogo, filtros avanzados, carrito de compras y sistema de autenticación.",
     longDescription: "Plataforma e-commerce full-stack construida con Next.js 15 y Supabase. Incluye catálogo de productos con filtros avanzados, búsqueda en tiempo real, carrito de compras, sistema de ofertas, checkout simulado y diseño responsive mobile-first inspirado en Mercado Libre.",
     image: "/images/ElectroStore.png",
     demo: "https://youtu.be/ER05ys3znIk",
     github: "https://github.com/SantiCabrera19/electrostore-ecommerce",
-    live: "https://electrostore-ecommerce.vercel.app",
+    live: "",
     features: [
       "Catálogo con filtros avanzados",
       "Búsqueda en tiempo real",
@@ -85,14 +101,14 @@ export const projects = [
     rubroLabel: "Comercio / E-commerce"
   },
   {
-    id: 6,
+    id: 7,
     title: "CineForo",
     description: "Plataforma de foros y reseñas de películas, con sistema de usuarios, comentarios y panel de administración.",
     longDescription: "Aplicación web full-stack desarrollada con Django y SQLite. Incluye sistema completo de CRUD para películas, reseñas con likes AJAX, autenticación de usuarios, panel de administración y diseño responsive.",
     image: "/images/CineForos.png",
     demo: "https://www.youtube.com/watch?v=ckkhcqXZt2w",
     github: "https://github.com/SantiCabrera19/cineforo",
-    live: "https://devsanticabrera.pythonanywhere.com/",
+    live: "",
     features: [
       "Sistema de usuarios",
       "Foros y reseñas",
@@ -103,14 +119,14 @@ export const projects = [
     rubroLabel: "Proyecto Personal / Foro"
   },
   {
-    id: 7,
+    id: 8,
     title: "Sistema de Gestión de Convenios",
     description: "Sistema web para gestión de convenios institucionales, CRUD, autenticación y panel de administración.",
     longDescription: "Aplicación web empresarial con sistema de roles (admin/user), gestión completa de convenios, flujo de aprobaciones, notificaciones por email con Resend, validaciones con Zod y dashboard administrativo.",
     image: "/images/Convenios-utn.png",
     demo: "https://www.youtube.com/watch?v=ul0mDuwQc-w",
     github: "https://github.com/SantiCabrera19/Convenios-UTN",
-    live: "https://convenios-utn.vercel.app/",
+    live: "",
     features: [
       "Gestión de convenios",
       "Autenticación",
@@ -122,14 +138,14 @@ export const projects = [
     rubroLabel: "Gestión Institucional / UTN"
   },
   {
-    id: 8,
+    id: 9,
     title: "Notes App",
     description: "Aplicación moderna de notas con sistema de etiquetas, filtros y búsqueda en tiempo real.",
     longDescription: "Aplicación full-stack completa para tomar notas con funcionalidades avanzadas como etiquetado, filtrado por etiquetas, búsqueda en tiempo real, archivo de notas y gestión completa de etiquetas. Desarrollada con React, Node.js, TypeScript y PostgreSQL.",
     image: "/images/NotesApp.png",
     demo: "https://www.youtube.com/watch?v=bzECnMQ7STQ",
     github: "https://github.com/SantiCabrera19/notes-app",
-    live: "https://notes-app-flax-eight.vercel.app/",
+    live: "",
     features: [
       "CRUD de notas",
       "Sistema de etiquetas",
