@@ -1,7 +1,8 @@
 export const profile = {
   name: "Santiago",
-  title: "Full Stack Developer",
-  description: "Desarrollador web apasionado por crear aplicaciones completas y funcionales. Especializado en Next.js, TypeScript y Supabase. Trabajo con IA como herramienta activa de desarrollo — Antigravity, Claude y flujos de vibecoding.",
+  title: "Digitalizo tu negocio con soluciones rápidas y a tu medida.",
+  description:
+    "Hola, soy Santiago. Desarrollo páginas web y sistemas sencillos para comercios, estudios jurídicos y profesionales en Resistencia. Te ayudo a captar más clientes, automatizar turnos y ordenar tus ventas de forma simple, con soporte presencial y cara a cara.",
   email: "santycabrera150@gmail.com",
   whatsapp: "+543624280817",
   github: "https://github.com/SantiCabrera19",
@@ -12,34 +13,33 @@ export const profile = {
 
 export const skills = [
   {
-    category: "Frontend",
-    technologies: ["React", "Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML/CSS"]
+    title: "Aplicación Web Instalable (PWA)",
+    description: "Tus clientes pueden agregar tu web a su pantalla de inicio como si fuera una app, sin pasar por App Store.",
+    icon: "Smartphone"
   },
   {
-    category: "Backend", 
-    technologies: ["Django", "Python", "Node.js", "Supabase"]
+    title: "Carga Instantánea",
+    description: "Sitios web optimizados para cargar en menos de 1.5 segundos con conexiones lentas en la calle.",
+    icon: "Zap"
   },
   {
-    category: "Database",
-    technologies: ["SQLite", "PostgreSQL", "MySQL"]
+    title: "Bases de Datos Seguras",
+    description: "Guardado automático de stock, clientes y deudas para descargar en Excel cuando quieras.",
+    icon: "Database"
   },
   {
-    category: "Tools & Cloud",
-    technologies: ["Git", "Vercel", "Supabase", "Google Cloud", "Resend API", "Claude AI", "Antigravity"]
+    title: "Control de Seguridad",
+    description: "Consola interna con clave numérica para que solo vos y tus operadores cambien precios y vean la caja.",
+    icon: "Shield"
   }
 ]
 
 export const experience = [
   {
-    title: "Full Stack Developer",
-    company: "Freelance",
-    period: "2023 - Presente",
-    description: "Desarrollo de aplicaciones web completas con Django y React"
-  },
-  {
-    title: "Desarrollador Web",
-    company: "Proyectos Personales",
-    period: "2022 - 2023", 
-    description: "Creación de portfolio y aplicaciones demostrativas"
+    title: "Especialista en Atención y Soporte al Cliente",
+    company: "Apex America",
+    period: "Soporte y Comunicación",
+    description: "Experiencia en gestión de canales de atención y resolución de conflictos para grandes marcas en Apex America. Este rol me dio la capacidad de escuchar las necesidades reales de la gente, traducir problemas técnicos a un lenguaje simple y brindar soluciones rápidas bajo presión. Entiendo que detrás de cada línea de código hay una persona que necesita que su herramienta funcione sin trabas."
   }
-] 
+]
+ 

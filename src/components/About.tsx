@@ -1,9 +1,30 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, Gamepad2, Music, Users, BookOpen, Database, Globe } from 'lucide-react'
+import { Coffee, Palette, Zap, Headphones } from 'lucide-react'
+import { experience } from '@/data/profile'
 
 const About = () => {
+  const pillars = [
+    {
+      title: "Soporte Presencial y Mate de por Medio",
+      description: "Soy de acá, de Resistencia. Si tenés una duda con tu sistema o querés cambiar algo, nos sentamos en tu local a charlarlo y lo resolvemos en el día. Sin llamadas frías ni demoras de soporte.",
+      icon: <Coffee size={28} className="text-primary-500" />
+    },
+    {
+      title: "Diseño a tu Gusto",
+      description: "Vos elegís la estética. Me mostrás fotos, páginas que te inspiren o ideas de colores, y yo me encargo de hacerlas realidad y adaptarlas a tu marca.",
+      icon: <Palette size={28} className="text-primary-500" />
+    },
+    {
+      title: "Carga Rápida en la Calle",
+      description: "Desarrollo sistemas livianos y rápidos. Tus clientes van a poder abrir tu carta o turnero al instante, incluso con mala señal 3G/4G y sin tener que descargar ninguna aplicación.",
+      icon: <Zap size={28} className="text-primary-500" />
+    }
+  ]
+
+  const apexExp = experience[0]
+
   return (
     <section id="about" className="section-padding bg-gray-900">
       <div className="container-custom">
@@ -12,66 +33,73 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Sobre Mí
           </h2>
+          <p className="mobile-text-lg text-gray-400 max-w-2xl mx-auto">
+            Pilares sobre los que construyo mis soluciones comerciales
+          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Lado Profesional en card */}
+        {/* Pilares de servicio */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+          {pillars.map((pillar, index) => (
+            <motion.div
+              key={pillar.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="p-8 bg-dark-800 border border-gray-700/50 rounded-2xl shadow-lg hover:border-primary-500/50 transition-all duration-300"
+            >
+              <div className="mb-4 flex items-center gap-3">
+                {pillar.icon}
+                <h3 className="text-xl font-bold text-white">
+                  {pillar.title}
+                </h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                {pillar.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Experiencia Apex */}
+        {apexExp && (
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="p-8 bg-white rounded-2xl shadow-lg"
+            className="p-8 bg-dark-800 border border-gray-700/50 rounded-2xl shadow-lg hover:border-primary-500/50 transition-all duration-300 max-w-4xl mx-auto"
           >
-            <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-              <Code size={28} className="text-primary-600" />
-              <Globe size={24} className="text-primary-500" />
-              <Database size={24} className="text-primary-500" />
-              Mi Stack Profesional
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Me defiendo tanto en el <strong>backend</strong> como en el <strong>frontend</strong>.<br /><br />
-              En backend disfruto construyendo sistemas robustos y eficientes con <strong>Django</strong> y <strong>Supabase</strong>.<br /><br />
-              En frontend, me especializo en <strong>Next.js</strong> (con Vite y Supabase), y también manejo vistas template en Django, HTML y CSS cuando hace falta. Mi objetivo es conectar el cliente con el servidor de manera fluida, asegurando una experiencia funcional y agradable.
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div className="flex items-center gap-3">
+                <Headphones size={28} className="text-primary-500 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                    {apexExp.title}
+                  </h3>
+                  <p className="text-gray-400 font-medium text-sm sm:text-base">
+                    {apexExp.company}
+                  </p>
+                </div>
+              </div>
+              <span className="px-3 py-1 bg-primary-600/20 text-primary-400 text-xs sm:text-sm rounded-full font-semibold self-start sm:self-center">
+                {apexExp.period}
+              </span>
+            </div>
+            <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+              {apexExp.description}
             </p>
           </motion.div>
-
-          {/* Lado Personal */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="p-8 bg-white rounded-2xl shadow-lg"
-          >
-            <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-              <Gamepad2 size={28} className="text-primary-600" />
-              Hobbies y Tiempo Libre
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-lg text-gray-700">
-                <Music size={20} className="text-primary-500"/>
-                Música chill para programar
-              </li>
-              <li className="flex items-center gap-3 text-lg text-gray-700">
-                <BookOpen size={20} className="text-primary-500"/>
-                Leer mangas y lore de videojuegos
-              </li>
-              <li className="flex items-center gap-3 text-lg text-gray-700">
-                <Users size={20} className="text-primary-500"/>
-                Tiempo con familia y amigos
-              </li>
-            </ul>
-          </motion.div>
-        </div>
+        )}
       </div>
     </section>
   )
 }
 
-export default About 
+export default About

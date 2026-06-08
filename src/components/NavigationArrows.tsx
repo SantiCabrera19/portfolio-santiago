@@ -22,7 +22,7 @@ const NavigationArrows = ({ currentSection }: NavigationArrowsProps) => {
   }
 
   return (
-    <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-2">
+    <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-40 hidden md:flex flex-col gap-2">
       {hasPrevious && (
         <motion.button
           initial={{ opacity: 0, x: 20 }}

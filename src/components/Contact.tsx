@@ -69,7 +69,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding bg-gray-900 border-t border-gray-800">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,11 +78,11 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Contacto
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            ¿Tienes un proyecto en mente? ¡Hablemos!
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            ¿Tenés un proyecto en mente? ¡Hablemos!
           </p>
         </motion.div>
 
@@ -94,27 +94,27 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl font-bold text-white mb-6">
               Información de Contacto
             </h3>
             
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center shrink-0">
-                  <Mail size={24} className="text-primary-600" />
+                <div className="w-12 h-12 bg-primary-600/10 rounded-lg flex items-center justify-center shrink-0">
+                  <Mail size={24} className="text-primary-500" />
                 </div>
                 <div className="flex-grow">
-                  <h4 className="font-semibold text-gray-900 text-sm">Email</h4>
+                  <h4 className="font-semibold text-white text-sm">Email</h4>
                   <div className="flex items-center">
                     <a
                       href={`mailto:${profile.email}`}
-                      className="text-gray-900 hover:text-primary-600 transition-colors duration-200 break-all"
+                      className="text-gray-300 hover:text-primary-500 transition-colors duration-200 break-all"
                     >
                       {profile.email}
                     </a>
                     <button
                       onClick={() => handleCopy(profile.email, 'email')}
-                      className="ml-3 p-1.5 rounded-md hover:bg-gray-200 transition-colors"
+                      className="ml-3 p-1.5 rounded-md hover:bg-gray-800 transition-colors"
                       aria-label="Copiar email"
                     >
                       {copiedField === 'email' ? (
@@ -128,23 +128,23 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center shrink-0">
-                  <FaWhatsapp size={24} className="text-primary-600" />
+                <div className="w-12 h-12 bg-primary-600/10 rounded-lg flex items-center justify-center shrink-0">
+                  <FaWhatsapp size={24} className="text-primary-500" />
                 </div>
                 <div className="flex-grow">
-                  <h4 className="font-semibold text-gray-900 text-sm">WhatsApp</h4>
+                  <h4 className="font-semibold text-white text-sm">WhatsApp</h4>
                   <div className="flex items-center">
                     <a
                       href={`https://wa.me/${profile.whatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-900 hover:text-primary-600 transition-colors duration-200"
+                      className="text-gray-300 hover:text-primary-500 transition-colors duration-200"
                     >
                       {profile.whatsapp}
                     </a>
                     <button
                       onClick={() => handleCopy(profile.whatsapp, 'whatsapp')}
-                      className="ml-3 p-1.5 rounded-md hover:bg-gray-200 transition-colors"
+                      className="ml-3 p-1.5 rounded-md hover:bg-gray-800 transition-colors"
                       aria-label="Copiar WhatsApp"
                     >
                       {copiedField === 'whatsapp' ? (
@@ -158,26 +158,26 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center shrink-0">
-                  <MapPin size={24} className="text-primary-600" />
+                <div className="w-12 h-12 bg-primary-600/10 rounded-lg flex items-center justify-center shrink-0">
+                  <MapPin size={24} className="text-primary-500" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">Ubicación</h4>
-                  <p className="text-gray-900">{profile.location}</p>
+                  <h4 className="font-semibold text-white text-sm">Ubicación</h4>
+                  <p className="text-gray-300">{profile.location}</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-white rounded-xl shadow-lg">
-              <h4 className="font-semibold text-gray-900 mb-4">
+            <div className="mt-8 p-6 bg-dark-800 border border-gray-700/50 rounded-xl shadow-lg">
+              <h4 className="font-semibold text-white mb-4">
                 Disponibilidad
               </h4>
-              <p className="text-gray-600 mb-4">
-                Actualmente disponible para proyectos freelance y oportunidades laborales.
+              <p className="text-gray-300 mb-4">
+                Actualmente disponible para proyectos y soluciones a medida en la región de Resistencia y alrededores.
               </p>
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-sm text-gray-600">Disponible</span>
+                <span className="text-sm text-gray-400">Disponible para trabajar</span>
               </div>
             </div>
           </motion.div>
@@ -191,7 +191,7 @@ const Contact = () => {
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                   Nombre
                 </label>
                 <input
@@ -207,7 +207,7 @@ const Contact = () => {
                 )}
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                   Email
                 </label>
                 <input
@@ -223,7 +223,7 @@ const Contact = () => {
                 )}
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                   Mensaje
                 </label>
                 <textarea

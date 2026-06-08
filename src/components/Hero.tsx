@@ -40,50 +40,41 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight"
-            >
-              Hola, soy <span className="text-primary-600">{profile.name}</span>
-            </motion.h1>
-            
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mobile-text-xl md:text-2xl text-gray-300 mb-4 sm:mb-6 lg:mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
             >
               {profile.title}
-            </motion.h2>
+            </motion.h1>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="mobile-text-lg text-gray-300 mb-6 sm:mb-8 lg:mb-12 px-4 sm:px-0"
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="mobile-text-lg text-gray-300 mb-8 sm:mb-10 lg:mb-12 px-4 sm:px-0 text-center lg:text-left leading-relaxed font-normal"
             >
               {profile.description}
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-8 lg:mb-12 px-4 sm:px-0"
-            >
-              <a
-                href="#projects"
-                className="btn-primary inline-flex items-center justify-center text-sm sm:text-base py-2.5 sm:py-3"
-              >
-                Ver Proyectos
-              </a>
-              <a
-                href="/Santiago-Cabrera-CV.pdf"
-                download
-                className="btn-secondary inline-flex items-center justify-center gap-2 text-sm sm:text-base py-2.5 sm:py-3"
-              >
-                <Download size={18} className="sm:w-5 sm:h-5" />
-                Descargar CV
-              </a>
-            </motion.div>
+ 
+             <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.8 }}
+               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-8 lg:mb-12 px-4 sm:px-0"
+             >
+               <a
+                 href="#projects"
+                 className="btn-primary inline-flex items-center justify-center text-sm sm:text-base py-2.5 sm:py-3"
+               >
+                 Ver Soluciones
+               </a>
+               <a
+                 href="/Santiago-Cabrera-CV.pdf"
+                 download
+                 className="btn-secondary inline-flex items-center justify-center gap-2 text-sm sm:text-base py-2.5 sm:py-3"
+               >
+                 <Download size={18} className="sm:w-5 sm:h-5" />
+                 Descargar CV
+               </a>
+             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

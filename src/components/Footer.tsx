@@ -19,7 +19,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">{profile.name}</h3>
             <p className="text-gray-400 mb-4">{profile.title}</p>
             <p className="text-gray-400 text-sm">
-              Desarrollador web apasionado por crear aplicaciones completas y funcionales.
+              Creando páginas y soluciones digitales a medida para comercios, profesionales y PyMEs de Resistencia.
             </p>
           </motion.div>
 
@@ -44,7 +44,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#skills" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Skills
+                  Capacidades
                 </a>
               </li>
               <li>
