@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { projects } from '@/data/projects'
-import { ExternalLink, Eye, MessageCircle } from 'lucide-react'
+import { ExternalLink, Eye, MessageCircle, Github } from 'lucide-react'
 import Image from 'next/image'
 
 const Projects = () => {
@@ -14,9 +14,27 @@ const Projects = () => {
     { id: 'all', label: 'Ver todos' },
     { id: 'gastronomia', label: 'Rotisería/Bar' },
     { id: 'profesional', label: 'Estudio/Consultorio' },
-    { id: 'comercio', label: 'Ferretería/Corralón' },
+    { id: 'comercio', label: 'Ferretería/Comercio' },
     { id: 'bienestar', label: 'Gimnasio' },
+    { id: 'otros', label: 'Otros Proyectos' },
   ]
+
+  const getYouTubeEmbedUrl = (url?: string): string | null => {
+    if (!url) return null
+    try {
+      // youtu.be/<id>
+      const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/)
+      if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
+
+      // youtube.com/watch?v=<id>
+      const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/)
+      if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
+
+      // already an embed
+      if (url.includes('/embed/')) return url
+    } catch {}
+    return null
+  }
 
   const filteredProjects = selectedRubro === 'all'
     ? projects
@@ -33,17 +51,17 @@ const Projects = () => {
           className="text-center mb-8 sm:mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Mis Soluciones Activas
+            Mis Soluciones y Proyectos
           </h2>
           <p className="mobile-text-lg text-gray-400 max-w-2xl mx-auto px-4 sm:px-0">
-            Sistemas rápidos y a medida listos para implementar y digitalizar tu negocio.
+            Sistemas rápidos y a medida listos para tu negocio, junto con desarrollos de software a medida.
           </p>
         </motion.div>
 
         {/* Filtros dinámicos */}
         <div className="flex flex-col items-center mb-12">
           <h3 className="text-lg text-gray-300 font-semibold mb-4 text-center">
-            ¿Qué negocio tenés?
+            ¿Qué negocio tenés o qué buscás?
           </h3>
           <div className="flex flex-wrap gap-2 sm:gap-3 justify-center max-w-4xl px-4">
             {rubros.map((rubro) => (
@@ -83,29 +101,42 @@ const Projects = () => {
                 transition={{ duration: 0.4 }}
                 className="bg-dark-800 rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl border border-gray-700/50 hover:border-primary-500/50 transition-all duration-300 flex flex-col h-full"
               >
-                {/* Mockup Preview */}
-                <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16/9' }}>
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-w-768px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    priority
-                  />
-                  <div className="absolute top-3 right-3 flex space-x-2">
-                    <motion.a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-primary-600 text-white p-2.5 rounded-full shadow-lg hover:bg-primary-700 transition-colors"
-                      title="Probar demo en vivo"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <ExternalLink size={18} />
-                    </motion.a>
-                  </div>
+                {/* Mockup Preview / YouTube Embed */}
+                <div className="relative w-full overflow-hidden bg-gray-950" style={{ aspectRatio: '16/9' }}>
+                  {project.demo ? (
+                    <iframe
+                      src={getYouTubeEmbedUrl(project.demo) || undefined}
+                      title={project.title + ' Demo'}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    ></iframe>
+                  ) : (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-w-768px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      priority
+                    />
+                  )}
+                  {project.live && !project.demo && (
+                    <div className="absolute top-3 right-3 flex space-x-2">
+                      <motion.a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-primary-600 text-white p-2.5 rounded-full shadow-lg hover:bg-primary-700 transition-colors"
+                        title="Probar demo en vivo"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <ExternalLink size={18} />
+                      </motion.a>
+                    </div>
+                  )}
                 </div>
 
                 {/* Contenido de Tarjeta */}
@@ -124,28 +155,44 @@ const Projects = () => {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-                    <motion.a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary flex-1 inline-flex items-center justify-center gap-2 text-sm sm:text-base py-2.5"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <ExternalLink size={16} />
-                      Probar Demo
-                    </motion.a>
-                    <motion.a
-                      href={`https://wa.me/543624280817?text=Hola%20Santiago!%20Me%20interesa%20la%20solución%20de%20${encodeURIComponent(project.title)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-secondary flex-1 inline-flex items-center justify-center gap-2 text-sm sm:text-base py-2.5 text-gray-300 hover:text-white"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <MessageCircle size={16} className="text-emerald-500" />
-                      Consultar
-                    </motion.a>
+                    {project.live && (
+                      <motion.a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary flex-1 inline-flex items-center justify-center gap-2 text-sm sm:text-base py-2.5"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <ExternalLink size={16} />
+                        Probar Demo
+                      </motion.a>
+                    )}
+                    {project.github ? (
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary flex-1 inline-flex items-center justify-center gap-2 text-sm sm:text-base py-2.5 text-gray-300 hover:text-white"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <Github size={16} />
+                        Ver Código
+                      </motion.a>
+                    ) : (
+                      <motion.a
+                        href={`https://wa.me/543624280817?text=Hola%20Santiago!%20Me%20interesa%20la%20solución%20de%20${encodeURIComponent(project.title)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary flex-1 inline-flex items-center justify-center gap-2 text-sm sm:text-base py-2.5 text-gray-300 hover:text-white"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <MessageCircle size={16} className="text-emerald-500" />
+                        Consultar
+                      </motion.a>
+                    )}
                   </div>
 
                   {/* Toggle ver más */}
