@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Forzar tema oscuro único */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark !important;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-zinc-100 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 min-h-[44px] inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500 focus-visible:ring-offset-dark-900 outline-none;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-700 hover:bg-dark-600 text-zinc-100 px-6 py-3 rounded-lg font-medium transition-colors duration-200 min-h-[44px] inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500 focus-visible:ring-offset-dark-900 outline-none;
+  }
+  
+  .section-padding {
+    @apply py-16 sm:py-24 lg:py-32;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* GLASSMORPHISM */
+  .glass-card {
+    @apply bg-dark-800/40 backdrop-blur-md border border-dark-700/60 rounded-2xl shadow-xl transition-all duration-300;
+  }
+  
+  .glass-card-hover {
+    @apply hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300;
+  }
+
+  /* MOBILE OPTIMIZATIONS */
+  .mobile-hero-spacing {
+    @apply py-12 sm:py-16 lg:py-24;
+  }
+  
+  .mobile-text-lg {
+    @apply text-base sm:text-lg text-zinc-300;
+  }
+  
+  .mobile-text-xl {
+    @apply text-lg sm:text-xl text-zinc-200;
+  }
+  
+  .mobile-gap {
+    @apply gap-6 sm:gap-8 lg:gap-12;
+  }
+  
+  .mobile-padding {
+    @apply p-6 sm:p-8 lg:p-12;
+  }
+
+  /* INPUTS CONTACTO */
+  .input-custom {
+    @apply w-full px-4 py-3 border border-dark-700 rounded-lg bg-dark-800/30 text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200 min-h-[44px];
+  }
+  
+  /* MOBILE NAVIGATION */
+  .mobile-nav-overlay {
+    @apply fixed inset-0 bg-dark-900/95 backdrop-blur-md z-50 md:hidden;
+  }
+  
+  .mobile-nav-content {
+    @apply flex flex-col items-center justify-center h-full space-y-8;
+  }
+  
+  .mobile-nav-item {
+    @apply text-2xl font-medium text-zinc-100 hover:text-primary-500 transition-colors duration-200;
+  }
+}
